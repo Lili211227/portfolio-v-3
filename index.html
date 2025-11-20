@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lili Biniyam — Frontend Developer portfolio showcasing projects, skills and contact information." />
+  <title>Lili Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@700&family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body class="theme1">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <!-- MINIMIZED LOGO -->
+      <div class="logo">
+        <a href="#home"><img src="logo.png" alt="Lili Biniyam logo" class="small-logo"></a>
+      </div>
+
+      <input type="checkbox" id="check" aria-hidden="true" />
+      <label for="check" class="checkbox" aria-hidden="true">
+        <i class='bx bx-menu-alt-left' id="menu" aria-hidden="true"></i>
+      </label>
+
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#project">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="help-btn" type="button" aria-haspopup="dialog" aria-controls="help-popup">Help</button>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <label for="theme" class="visually-hidden">Choose theme</label>
+        <select id="theme" name="theme">
+          <option value="theme1">Black & Golden</option>
+          <option value="theme2">Shiny Light Pink</option>
+          <option value="theme3">Light Purple & Cream</option>
+          <option value="theme4">White & Shiny Gray</option>
+        </select>
+        <button id="mode-toggle" class="toggle-btn" aria-pressed="false" title="Toggle dark/light mode">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Home Section -->
+    <section class="home" id="home">
+      <div class="home-content fade-in">
+        <h1 class="fancy-heading">
+          Hello I'm <span id="typing-text" aria-live="polite"></span><span class="cursor" aria-hidden="true">|</span>
+        </h1>
+        <p>
+          Frontend Developer | Creative Coder | Bachelor in
+          <strong class="span1">Information System</strong> |
+          Certified <strong class="span1">Udacity</strong>
+        </p>
+
+        <div class="socials" aria-label="social links">
+          <a href="mailto:liliyemar2112@gmail.com" target="_blank" rel="noopener noreferrer" title="Email"><i class='bx bxs-envelope' aria-hidden="true"></i><span class="sr-only"></span></a>
+          <a href="https://t.me/Solomie_2" target="_blank" rel="noopener noreferrer" title="Telegram"><i class='bx bxl-telegram' aria-hidden="true"></i><span class="sr-only"></span></a>
+          <a href="https://www.instagram.com/princessbiniya/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class='bx bxl-instagram' aria-hidden="true"></i><span class="sr-only"></span></a>
+          <a href="https://www.linkedin.com/in/lielt-biniyam-ab0182361/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class='bx bxl-linkedin' aria-hidden="true"></i><span class="sr-only"></span></a>
+        </div>
+      </div>
+
+      <figure class="profile-figure">
+        <img src="profile.jpg" alt="Lili Biniyam — profile photo" class="fade-in profile-img" id="profile-preview">
+        <figcaption class="sr-only">Profile image preview</figcaption>
+      </figure>
+      <label for="upload-photo" class="upload-label">Upload profile photo</label>
+      <input type="file" id="upload-photo" accept="image/*" aria-describedby="upload-desc">
+      <p id="upload-desc" class="sr-only">Select an image to replace your profile photo. Preview will appear instantly.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+      <h2 class="heading">About <span>Me</span></h2>
+      <p>
+        I am an Information System student, passionate about system designing,
+        algorithms, and building solutions that solve real-world problems.
+        I am applying my learning to prepare for a professional career in technology.
+      </p>
+
+      <div class="info-cards">
+        <article class="card fade-in" aria-labelledby="langs-heading">
+          <h3 id="langs-heading">Languages</h3>
+          <i class='bx bx-code-alt' aria-hidden="true"></i>
+          <ul>
+            <li>
+              <i class='bx bxl-html5' aria-hidden="true"></i> HTML
+              <i class='bx bxs-file-js' aria-hidden="true"></i> JS
+              <i class='bx bxl-java' aria-hidden="true"></i> Java
+              <i class='bx bxl-c-plus-plus' aria-hidden="true"></i> C++
+            </li>
+          </ul>
+        </article>
+
+        <article class="card fade-in" aria-labelledby="edu-heading">
+          <h3 id="edu-heading">Education</h3>
+          <p class="emoji" aria-hidden="true">👩🏽‍🎓</p>
+          <ul>
+            <li>Information System Student</li>
+            <li>Certified in Udacity</li>
+          </ul>
+          <button class="btn"><a href="udacity.jpg" target="_blank" rel="noopener noreferrer">View my Resume</a></button>
+        </article>
+
+        <article class="card fade-in" aria-labelledby="works-heading">
+          <h3 id="works-heading">My Works</h3>
+          <i class='bx bx-folder' aria-hidden="true"></i>
+          <ul>
+            <li>Simple Quiz Game</li>
+            <li>Expense Tracker</li>
+            <li>Registration System</li>
+          </ul>
+          <button class="btn"><a href="project.html">View projects</a></button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Features SECTION -->
+    <section id="features" class="features fade-in">
+      <h2 class="heading">Website <span>Features</span></h2>
+      <div class="feature-boxes">
+        <div class="f-box">
+          <i class='bx bx-mobile-alt' aria-hidden="true"></i>
+          <h3>Fully Responsive</h3>
+          <p>Your portfolio adjusts beautifully on all devices.</p>
+        </div>
+
+        <div class="f-box">
+          <i class='bx bx-palette' aria-hidden="true"></i>
+          <h3>Theme Switcher</h3>
+          <p>Choose from 4 unique elegant themes.</p>
+        </div>
+
+        <div class="f-box">
+          <i class='bx bx-image-add' aria-hidden="true"></i>
+          <h3>Profile Upload</h3>
+          <p>You can upload your own profile photo instantly.</p>
+        </div>
+
+        <div class="f-box">
+          <i class='bx bx-support' aria-hidden="true"></i>
+          <h3>Help Popup</h3>
+          <p>Built-in help guide for easy navigation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="project" id="project">
+      <h2 class="heading fade-in">My <span class="span1">Projects</span></h2>
+
+      <div class="project-container">
+        <div class="project-box fade-in">
+          <img src="hot.jpg" alt="Hotel Management System screenshot">
+          <div class="project-layer">
+            <h4>Hotel Management System</h4>
+            <p>Java-based system implementing room booking, guest management, and payment processing.</p>
+            <a href="https://github.com/Lili211227/Hotel-management-system-" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+          </div>
+        </div>
+
+        <div class="project-box fade-in">
+          <img src="sup.jpg" alt="Supermarket Management System screenshot">
+          <div class="project-layer">
+            <h4>Supermarket Management System</h4>
+            <p>C++ system to manage products, inventory, and stock operations efficiently.</p>
+            <a href="https://github.com/Lili211227/Supermarket-management-system-1/tree/main" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+          </div>
+        </div>
+
+        <div class="project-box fade-in">
+          <img src="real.jpg" alt="RealEstate Management System screenshot">
+          <div class="project-layer">
+            <h4>RealEstate Property Listing Management System</h4>
+            <p>C++ system to handle property listings, user management, and search functionality efficiently.</p>
+            <a href="https://github.com/Lili211227/Real-estate-management-system-" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+          </div>
+        </div>
+
+        <div class="project-box fade-in">
+          <img src="super.jpg" alt="Supermarket Management System screenshot">
+          <div class="project-layer">
+            <h4>Supermarket Management System</h4>
+            <p>Database system to manage user data, grants, and operations efficiently.</p>
+            <a href="https://github.com/Lili211227/Supermarket-management-system-" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github' aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+
+      <form action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="a7acab2f-6580-4778-a05b-be4f6705f9b2">
+
+        <div class="input-box">
+          <label for="full_name" class="sr-only">Full name</label>
+          <input type="text" name="full_name" id="full_name" placeholder="Please enter your full name" required>
+          <span id="nameError" class="error" aria-live="polite"></span>
+
+          <label for="email" class="sr-only">Email address</label>
+          <input type="email" name="email" id="email" placeholder="Please enter your email address" required>
+          <span id="emailError" class="error" aria-live="polite"></span>
+
+          <label for="phone" class="sr-only">Phone number (optional)</label>
+          <input type="tel" name="phone" id="phone" placeholder="Phone number (optional)">
+          <span id="phoneError" class="error" aria-live="polite"></span>
+        </div>
+
+        <label for="message" class="sr-only">Message</label>
+        <textarea name="message" id="message" placeholder="Your message..." rows="6" required></textarea>
+        <span id="success" role="status" aria-live="polite"></span>
+
+        <div class="button-box">
+          <input type="submit" value="Send Message">
+          <input type="reset" value="Reset" class="btn">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- HELP POPUP -->
+  <div id="help-popup" class="help-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="help-content">
+      <button id="help-close" aria-label="Close help">&times;</button>
+      <h2>Need Help?</h2>
+      <p>Use the navigation bar to explore sections like Home, About, Features, Projects, and Contact.</p>
+      <p>Use the theme menu to switch colors. Upload a profile photo from the Home section.</p>
+    </div>
+  </div>
+
+  <!-- Back-to-Top Button -->
+  <button id="back-to-top" aria-label="Back to top"><i class='bx bx-up-arrow-alt' aria-hidden="true"></i></button>
+  <footer role="contentinfo">Copyright &copy;<span id="year"></span> by Lili Bin | All Rights Reserved</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

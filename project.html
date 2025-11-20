@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lili | My Works</title>
+
+  <!-- Fancy Font + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    :root {
+      --transition: all 0.5s ease-in-out;
+      --font-body: 'Nunito', sans-serif;
+      --font-heading: 'Cinzel Decorative', cursive;
+    }
+
+    /* === THEMES === */
+    body.theme1 { --bg:#0a0a0a; --text:#ffd700; --accent:#ffdd00; --card:#1a1a1a; --hover:#fff200;}
+    body.theme2 { --bg:#ffe6f0; --text:#ff1a75; --accent:#ff66b2; --card:#ffd9e6; --hover:#ff66b2;}
+    body.theme3 { --bg:#f8f0ff; --text:#6a0dad; --accent:#a366ff; --card:#fff5ff; --hover:#a366ff;}
+    body.theme4 { --bg:#ffffff; --text:#555555; --accent:#aaaaaa; --card:#f2f2f2; --hover:#888888;}
+
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 2rem;
+      background: var(--bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .logo img {
+      width:130px;
+      height:auto;
+    }
+
+    nav a {
+      margin:0 1rem;
+      text-decoration:none;
+      color: var(--text);
+      font-family: var(--font-heading);
+      font-weight:600;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    .controls {
+      display:flex;
+      gap:0.5rem;
+    }
+
+    .theme-toggle {
+      padding:8px 10px;
+      border-radius:8px;
+      background: var(--accent);
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      transition: var(--transition);
+      font-family: var(--font-heading);
+    }
+    .theme-toggle:hover { transform:scale(1.1); background: var(--hover); }
+
+    /* === WORK SECTION === */
+    .work {
+      padding: 80px 8%;
+      text-align: center;
+    }
+
+    .heading {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px var(--accent);
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      transition: var(--transition);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+      filter: brightness(0.7);
+    }
+
+    .card-layer {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--text);
+      opacity: 0;
+      transition: var(--transition);
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card:hover .card-layer { opacity: 1; }
+
+    .card-layer h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    .card-layer p {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: var(--card);
+      color: var(--text);
+      margin-top: 2rem;
+    }
+
+    /* Fade animation */
+    .fade-in { opacity:0; transform:translateY(20px); transition: all 1s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    @media(max-width:768px){
+      nav { flex-direction: column; }
+      .controls { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body class="theme2">
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="Lili Logo"></a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#works" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="controls">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </header>
+
+  <section class="work fade-in" id="works">
+    <h2 class="heading">My Frontend Works</h2>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="Screenshot (2).png" alt="Simple Quiz Game">
+        <div class="card-layer">
+          <h3>Simple Game Quiz</h3>
+          <p>My first project — a fun JavaScript quiz app built during my early coding journey.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Screenshot (4).png" alt="Expense Tracker">
+        <div class="card-layer">
+          <h3>Expense Tracker</h3>
+          <p>A modern app to calculate and manage income and withdrawals efficiently.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Screenshot (5).png" alt="Registration System">
+        <div class="card-layer">
+          <h3>Registration Page</h3>
+          <p>A sleek, reusable registration form suitable for multiple web apps.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Screenshot (9).png" alt="Validation App">
+        <div class="card-layer">
+          <h3>Validation System</h3>
+          <p>Frontend form validation with responsive design and real-time feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Copyright &copy; <span id="year"></span> by Lili Bin | All Rights Reserved 💖</footer>
+
+  <script>
+    // === Fade-in Animation ===
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // === Year Auto Update ===
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // === Theme Toggle ===
+    const themes = ["theme1", "theme2", "theme3", "theme4"];
+    let index = 1;
+    const body = document.body;
+    const btn = document.getElementById("themeToggle");
+
+    btn.addEventListener("click", () => {
+      body.classList.remove(themes[index]);
+      index = (index + 1) % themes.length;
+      body.classList.add(themes[index]);
+    });
+  </script>
+</body>
+</html>
